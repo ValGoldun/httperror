@@ -15,6 +15,12 @@ type ProblemWriter struct {
 	logger logger.Logger
 }
 
+func NewProblemWriter(logger logger.Logger) ProblemWriter {
+	return ProblemWriter{
+		logger: logger,
+	}
+}
+
 func (pw ProblemWriter) Problem(ctx *gin.Context, err error) {
 	if err == nil {
 		return
